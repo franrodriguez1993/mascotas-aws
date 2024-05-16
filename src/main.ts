@@ -4,6 +4,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('/api/');
-  await app.listen(3000);
+  
+  const PORT = process.env.PORT;
+  await app.listen(PORT, () => {
+    console.log("running in " + PORT)
+  });
 }
 bootstrap();
