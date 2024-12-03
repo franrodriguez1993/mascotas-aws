@@ -29,7 +29,7 @@
     "@nestjs/mongoose": "^10.0.2",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^8.0.7",
-    "axios": "^1.6.3",
+    "axios": "^1.7.8",
     "class-validator": "^0.14.1",
     "express-jwt": "^8.4.1",
     "helmet": "^7.1.0",
