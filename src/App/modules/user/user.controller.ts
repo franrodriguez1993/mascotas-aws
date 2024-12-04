@@ -4,17 +4,15 @@ import axios from 'axios';
 
 @Controller('user')
 export class UserController {
-
   @Post('')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({description:"Test endpoint: Login user"})
-  async login() { 
+  @ApiOperation({ description: 'Test endpoint: Login user' })
+  async login() {
     const gatewayUrl = process.env.AWS_GATEWAY;
     if (gatewayUrl) {
-    const response = await axios.post(gatewayUrl);
-    console.log(response.data);
+      const response = await axios.post(gatewayUrl);
+      console.log(response.data);
     }
-
 
     return { statusCode: HttpStatus.OK, result: 'login' };
   }
