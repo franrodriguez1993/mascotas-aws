@@ -5,6 +5,7 @@ import { MongoConfigModule } from './database/MongoConfig.module';
 import { PetModule } from './App/modules/pet/pet.module';
 import { UserModule } from './App/modules/user/user.module';
 import { MediaModule } from './App/modules/media/media.module';
+import { FoodModule } from './App/modules/food/food.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { MediaModule } from './App/modules/media/media.module';
     PetModule,
     UserModule,
     MediaModule,
+    FoodModule,
   ],
 })
 export class AppModule implements NestModule {

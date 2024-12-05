@@ -21,6 +21,7 @@
     "test:pet": "jest --config ./test/integration/jest-e2e.json ./test/integration/pet/create.e2e-spec.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.705.0",
     "@aws-sdk/client-s3": "^3.705.0",
     "@nestjs/axios": "^3.0.1",
     "@nestjs/common": "^10.0.0",
@@ -40,7 +41,8 @@
     "mongoose": "^8.0.3",
     "multer": "^1.4.5-lts.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
