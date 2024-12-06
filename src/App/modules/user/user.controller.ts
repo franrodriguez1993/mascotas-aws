@@ -1,19 +1,37 @@
-import { Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
-import axios from 'axios';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { UserService } from './user.service';
+import { CreateUserDTO } from './user.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('user')
+@ApiTags("user")
 export class UserController {
-  @Post('')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({ description: 'Test endpoint: Login user' })
-  async login() {
-    const gatewayUrl = process.env.AWS_GATEWAY;
-    if (gatewayUrl) {
-      const response = await axios.post(gatewayUrl);
-      console.log(response.data);
-    }
+  constructor(private readonly userService: UserService) {}
 
-    return { statusCode: HttpStatus.OK, result: 'login' };
+  @Post()
+  create(@Body() createUserDto: CreateUserDTO) {
+    return this.userService.create(createUserDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.userService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.userService.findOne(+id);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.userService.remove(+id);
   }
 }

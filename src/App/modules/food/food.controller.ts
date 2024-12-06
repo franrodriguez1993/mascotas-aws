@@ -1,11 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { FoodService } from './food.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateFoodDTO, UpdateFoodDTO } from './food.dto';
 
-
 @Controller('food')
-@ApiTags("food")
+@ApiTags('food')
 export class FoodController {
   constructor(private readonly foodService: FoodService) {}
 
@@ -15,7 +22,7 @@ export class FoodController {
   }
 
   @Get()
-  @ApiOperation({description:"List all food"})
+  @ApiOperation({ description: 'List all food' })
   findAll() {
     return this.foodService.findAll();
   }

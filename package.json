@@ -31,8 +31,10 @@
     "@nestjs/mongoose": "^10.0.2",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^8.0.7",
+    "@nestjs/typeorm": "^10.0.2",
     "@types/multer": "^1.4.12",
     "axios": "^1.7.8",
+    "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
     "express-jwt": "^8.4.1",
     "helmet": "^7.1.0",
@@ -40,8 +42,11 @@
     "jwks-rsa": "^3.1.0",
     "mongoose": "^8.0.3",
     "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
+    "typeorm": "^0.3.20",
+    "typeorm-naming-strategies": "^4.1.0",
     "uuid": "^11.0.3"
   },
   "devDependencies": {

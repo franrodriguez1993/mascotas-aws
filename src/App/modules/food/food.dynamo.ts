@@ -1,5 +1,5 @@
-import { CreateFoodDTO } from "./food.dto";
-import { v4 as uuidV4 } from "uuid";
+import { CreateFoodDTO } from './food.dto';
+import { v4 as uuidV4 } from 'uuid';
 
 export class Food {
   _id: string;
@@ -8,17 +8,17 @@ export class Food {
   createdAt: Date;
   updatedAt?: Date;
 
-  static newInstanceFromDynamo(data: any): Food{
+  static newInstanceFromDynamo(data: any): Food {
     const result = new Food();
     result._id = data._id.S;
     result.name = data.name.S;
     result.price = data.price.N;
     result.createdAt = new Date(Number(data.createdAt.N));
- 
+
     if (data.updatedAt) {
       result.updatedAt = new Date(Number(data.updatedAt.N));
     }
-       return result;
+    return result;
   }
 
   static newInstanceFromDTO(data: CreateFoodDTO) {

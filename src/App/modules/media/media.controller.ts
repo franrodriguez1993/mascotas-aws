@@ -15,8 +15,7 @@ import { MediaService } from './media.service';
 @Controller('media')
 @ApiTags('media')
 export class MediaController {
-
-  constructor(private readonly mediaService:MediaService){}
+  constructor(private readonly mediaService: MediaService) {}
 
   @Post()
   @ApiOperation({ description: 'Upload file to S3' })
@@ -47,8 +46,10 @@ export class MediaController {
     )
     file: Express.Multer.File,
   ) {
-
-   const response = await this.mediaService.uploadFile(file.originalname, file.buffer);
+    const response = await this.mediaService.uploadFile(
+      file.originalname,
+      file.buffer,
+    );
 
     return { statusCode: HttpStatus.CREATED, result: response };
   }
